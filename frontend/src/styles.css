@@ -1,0 +1,210 @@
+:root {
+  --bg: #f9fafb;
+  --card: #ffffff;
+  --primary: #4f46e5;         /* Indigo */
+  --primary-hover: #4338ca;
+  --danger: #ef4444;          /* Red */
+  --danger-hover: #dc2626;
+  --success: #10b981;         /* Green */
+  --warning: #f59e0b;         /* Amber */
+  --muted: #6b7280;
+  --radius: 10px;
+  --shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  color: #111;
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header + Nav */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #4f46e5, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  transition: background 0.25s, color 0.25s;
+}
+
+.navbar a:hover {
+  background: rgba(79, 70, 229, 0.15);
+  color: var(--primary-hover);
+}
+
+.navbar .active {
+  background: var(--primary);
+  color: white !important;
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-top: 20px;
+}
+
+/* Forms */
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--radius);
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+button {
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.error {
+  color: var(--danger);
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+/* Dashboard */
+.dashboard .dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* Task Form */
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.task-form input,
+.task-form select {
+  flex: 1;
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task {
+  background: var(--card);
+  padding: 16px;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease;
+}
+
+.task:hover {
+  transform: translateY(-3px);
+}
+
+.task.done {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.task-main {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.task-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.task-text .desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.badge.Low { background: #dbeafe; color: #1e40af; }        /* Blue */
+.badge.Medium { background: #fef3c7; color: #92400e; }     /* Amber */
+.badge.High { background: #fee2e2; color: #991b1b; }       /* Red */
+
+.task-actions button {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid #f0dede;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.task-actions button:hover {
+  background: var(--danger);
+  color: white;
+  border-color: var(--danger);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 32px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
